@@ -41,7 +41,8 @@ function App() {
 
   return(
     <article className='container-card'>
-      <div className='card-ranked'> 
+      {!submit ? (
+        <div className='card-ranked'> 
         <div className='icon-container'>
         <img src={star} alt="icono de estrella" className='icon-star' />
         </div>
@@ -56,7 +57,8 @@ function App() {
           SUBMIT
         </button>
       </div>
-      <div className='card-sucess'>
+      ) : (
+        <div className='card-sucess'>
         <div className="card-success">
           <img src={ThankImg} alt="" />
           <span className="card-sucess-span">You selected {number} out of 5</span>
@@ -64,6 +66,10 @@ function App() {
           <p className="card-sucess-text">We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch</p>
         </div>
         </div>
+
+      )}
+      
+      
 
       
     </article>
